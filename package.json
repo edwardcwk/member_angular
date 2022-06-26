@@ -3,11 +3,10 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "node --max_old_space_size=5048 ./node_modules/@angular/cli/bin/ng build --prod",
+    "start": "NODE_OPTIONS=max_old_space_size=16384 ionic serve",
+    "build": "NODE_OPTIONS=max_old_space_size=16384 ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
-    
   },
   "private": true,
   "dependencies": {
