@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node --max_old_space_size=2192 ./node_modules/@angular/cli/bin/ng serve",
+    "start": "node --max_old_space_size=2192 ./node_modules/@ionic/cli/bin/ionic serve",
     "build": "ionic build --prod",
     "watch": "ionic build --watch --configuration development",
     "test": "ng test"
