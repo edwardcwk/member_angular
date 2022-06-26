@@ -4,8 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "node --max_old_space_size=2192 ./node_modules/@angular/cli/bin/ng serve",
-    "build": "node --max_old_space_size=2192 ./node_modules/@angular/cli/bin/ng build",
-    "watch": "ng build --watch --configuration development",
+    "build": "ionic build --prod",
+    "watch": "ionic build --watch --configuration development",
     "test": "ng test"
   },
   "private": true,
