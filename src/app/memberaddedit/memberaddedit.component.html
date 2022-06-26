@@ -1,0 +1,81 @@
+<ion-content>
+    <h1>&nbsp;</h1>
+    <h1>&nbsp;</h1>
+    <!-- {{member|json}} -->
+    <ion-grid fixed>
+        <div class="form-group">
+            <form [formGroup]="formgroup">
+                <ion-input #id hidden type="text" formControlName="id" name="id" id="id" class="form-control"
+                    placeholder="id"></ion-input>
+
+                <ion-item>
+                    <ion-label position="floating">name <ion-text color="danger">*</ion-text>
+                    </ion-label>
+                    <ion-input required formControlName="name" type="text"></ion-input>
+                </ion-item>
+                <ion-item *ngIf="(formgroup.controls['name'].invalid && formgroup.controls['name'].touched)"
+                    lines="none">
+                    <ion-text color="danger" class="form-error">
+                        Please enter a valid name
+                    </ion-text>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label position="floating">age <ion-text color="danger">*</ion-text>
+                    </ion-label>
+                    <ion-input required formControlName="age" type="number"></ion-input>
+                </ion-item>
+                <ion-item *ngIf="(formgroup.controls['age'].invalid && formgroup.controls['age'].touched)" lines="none">
+                    <ion-text color="danger" class="form-error">
+                        Please enter a number.
+                    </ion-text>
+                </ion-item>
+                <ion-item>
+                    
+                    <ion-select formControlName="gender" >
+                        <ion-select-option value="M">Male <ion-icon name="male"></ion-icon>
+                        </ion-select-option>
+                        <ion-select-option value="F">Female <ion-icon name="female"></ion-icon>
+                        </ion-select-option>
+                    </ion-select>
+                </ion-item>
+
+
+                <ion-item>
+                    <ion-label position="floating">E-Mail <ion-text color="danger">*</ion-text>
+                    </ion-label>
+                    <ion-input inputmode=”email” required formControlName="email" type="text"></ion-input>
+                </ion-item>
+                <ion-item *ngIf="(formgroup.controls['email'].invalid && formgroup.controls['email'].touched)"
+                    lines="none">
+                    <ion-text color="danger" class="form-error">
+                        Please enter a valid email address.
+                    </ion-text>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label position="floating">Password <ion-text color="danger">*</ion-text>
+                    </ion-label>
+                    <ion-input required formControlName="password" type="password"></ion-input>
+                </ion-item>
+                <ion-item *ngIf="(formgroup.controls['password'].invalid && formgroup.controls['password'].touched)"
+                    lines="none">
+                    <ion-text color="danger" class="form-error">
+                        Please enter a valid password
+                    </ion-text>
+                </ion-item>
+
+                <ion-button [disabled]="formgroup.invalid" type="sumbit" (click)="submit()">
+                    <ion-icon name="send"></ion-icon> Submit
+                </ion-button>
+
+
+            </form>
+
+
+            <!-- <p>{{member |json}}</p>
+    <p>{{formgroup.value |json}}</p>
+    <p>{{formgroup.status}}</p> -->
+        </div>
+    </ion-grid>
+</ion-content>

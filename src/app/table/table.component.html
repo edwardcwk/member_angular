@@ -1,0 +1,21 @@
+<ion-grid fixed>
+<div style="margin-bottom: 200px;" #content>
+    <h1>&nbsp;</h1>
+  
+    <ion-row *ngFor="let row of data;  index as j" [routerLink]='["/chat",row.id,row.name]'>
+        <ion-col size="2">
+            <ion-icon name="female" *ngIf="row.gender=='M'"></ion-icon>
+            <ion-icon name="male" *ngIf="row.gender!='M'"></ion-icon>
+        </ion-col>
+
+        <ion-col size="5">
+            {{ row.name }}
+        </ion-col>
+        <ion-col size="5">
+            {{row.age}}/{{row.gender}}
+        </ion-col>
+    </ion-row>
+   
+
+</div>
+</ion-grid>

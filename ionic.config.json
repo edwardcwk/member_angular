@@ -1,0 +1,11 @@
+
+{
+  "defaultProject": "member_angular",
+  "projects": {
+    "member_angular": {
+      "name": "member_angular",
+      "integrations": {"capacitor": {}},
+      "type": "angular"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+<ion-content #content>
+    
+        <!-- style="margin-bottom: 100px"> -->
+        <div class="chatlist">
+            <div *ngFor="let row of data;  index as j;">
+                <h3 [class.ion-text-end]="row.sender_id==loginId">
+                    <span *ngIf="row.sender_id != loginId">{{name}}:</span>{{row.message}}
+                </h3>
+                <p [class.ion-text-end]="row.sender_id==loginId">{{row.created_date|date:'long'}}<i class="fa fa-user"
+                        aria-hidden="true"></i></p>
+            </div>
+        </div>
+       
+
+        <div style="position: fixed; left:0;bottom:40px; right:0;background-color: white;"  >
+            <ion-grid fixed>
+                <ion-row>
+                    <ion-col size="12" size-sm size-md="7" size-lg="9">
+                        <ion-input style="background-color: lightpink;" #vmsgtext [(ngModel)]="msgtext"
+                            (focus)="focus($event)" (keypress)="keypress($event);" [(ngModel)]="msgtext" type="text" aria-label="Recipient's ">
+                        </ion-input>
+                    </ion-col>
+                    <ion-col size="12" size-sm size-md="5" size-lg="3"  >
+                        <ng-container *ngFor="let item of  priorities" role="group" aria-label="Button group">
+                            <ion-button size="small" [disabled]="!msgtext" (click)="submitmsg(item.key);" type="submit"
+                                id="triggerId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{item.name}}
+                            </ion-button>
+
+                        </ng-container>
+                    </ion-col>
+
+
+                </ion-row>
+            </ion-grid>
+
+        
+    </div>
+ 
+   <!-- <p *ngIf="!isDesktop">&nbsp;</p>  -->
+
+    <!-- <p >&nbsp;</p> -->
+
+</ion-content>

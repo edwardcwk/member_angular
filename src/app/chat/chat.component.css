@@ -1,0 +1,4 @@
+.chatlist  div:hover {background-color: grey;color:azure}
+.chatlist  {padding:10vw;}
+
+.notdesktop {bottom: 40px;}

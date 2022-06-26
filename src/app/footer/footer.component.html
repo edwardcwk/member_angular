@@ -1,0 +1,21 @@
+<ion-tabs *ngIf="loginned">
+    <ion-tab-bar slot="bottom" >
+        <ion-tab-button routerLink="/memberlist">
+            <ion-icon name="list"></ion-icon>
+            <ion-label>Member List</ion-label>
+        </ion-tab-button>
+        <ion-tab-button  routerLink="/inbox">
+            <ion-icon name="mail"></ion-icon>
+            <ion-label>Inbox</ion-label>
+        </ion-tab-button>
+        <ion-tab-button  routerLink="/memberaddedit">
+            <ion-icon name="person"></ion-icon>
+            <ion-label>Profile</ion-label>
+        </ion-tab-button>
+        <ion-tab-button  onclick='localStorage.clear(); window.open("./login","_self") ;'>
+            <ion-icon name="exit"></ion-icon>
+            <ion-label>Logout</ion-label>
+        </ion-tab-button>
+
+    </ion-tab-bar>
+</ion-tabs>
